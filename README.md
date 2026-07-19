@@ -1,3 +1,5 @@
+<img width="1866" height="878" alt="Screenshot (120)" src="https://github.com/user-attachments/assets/8f309f39-7e03-438b-afdd-0dd90f4cf0cf" />
+<img width="1855" height="888" alt="Screenshot (119)" src="https://github.com/user-attachments/assets/f6ceb317-d269-48fa-8556-770d7959be1e" />
 # Real-time System Monitoring with AI Predictions
 
 An agentic monitoring platform that collects live system metrics, forecasts
