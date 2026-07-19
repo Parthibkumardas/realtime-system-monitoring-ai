@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Real-time system monitoring with AI predictions</title>
+<link rel="stylesheet" href="style.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">◆</span>
+      <div>
+        <h1>Real-time system monitoring <span class="accent">with AI predictions</span></h1>
+        <p class="subtitle">Live metrics · forecasting · RAG assistant</p>
+      </div>
+    </div>
+    <div class="status-pill" id="connectionStatus">connecting...</div>
+  </header>
+
+  <section class="metric-row" id="metricRow">
+    <div class="metric-card">
+      <p class="metric-label">CPU</p>
+      <p class="metric-value" id="cpuValue">--</p>
+    </div>
+    <div class="metric-card">
+      <p class="metric-label">Memory</p>
+      <p class="metric-value" id="memoryValue">--</p>
+    </div>
+    <div class="metric-card">
+      <p class="metric-label">Disk</p>
+      <p class="metric-value" id="diskValue">--</p>
+    </div>
+    <div class="metric-card danger" id="anomalyCard">
+      <p class="metric-label">Anomaly status</p>
+      <p class="metric-value" id="anomalyValue">--</p>
+    </div>
+  </section>
+
+  <main class="main-grid">
+    <div class="left-column">
+      <div class="panel">
+        <p class="panel-title">CPU forecast · actual vs predicted</p>
+        <div class="chart-wrap">
+          <canvas id="forecastChart" role="img" aria-label="Line chart of actual CPU usage and forecasted CPU usage"></canvas>
+        </div>
+      </div>
+
+      <div class="panel">
+        <p class="panel-title">Recent metric history</p>
+        <div class="chart-wrap short">
+          <canvas id="historyChart" role="img" aria-label="Line chart of recent CPU, memory, and disk usage"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <div class="panel chat-panel">
+        <p class="panel-title">Ask the assistant</p>
+        <div id="chatLog" class="chat-log">
+          <div class="chat-message assistant">
+            Ask me about live metrics, forecasts, or past incidents.
+          </div>
+        </div>
+        <div class="chat-input-row">
+          <input type="text" id="chatInput" placeholder="Why did memory spike?" />
+          <button id="chatSend">Ask</button>
+        </div>
+        <p class="hint">Uses the agentic <code>/api/agent/query</code> endpoint, which decides which tools to call.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

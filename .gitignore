@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+venv/
+.venv/
+env/
+.env
+chroma_db/
+*.db
+*.log
+.DS_Store
+node_modules/
+dist/
+build/
+.pytest_cache/
+.coverage
+*.egg-info/

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "incident-482",
+    "service": "api-gateway",
+    "text": "Incident #482: api-gateway memory grew steadily for 40 minutes after a deploy due to an unbounded in-memory cache that never evicted old entries. Resolved by restarting the cache layer and adding a max-size eviction policy."
+  },
+  {
+    "id": "incident-311",
+    "service": "worker-queue",
+    "text": "Incident #311: worker-queue backlog grew unbounded after a downstream dependency slowed down, causing memory usage to climb as messages piled up faster than they were processed. Resolved by adding backpressure and a queue depth alert."
+  },
+  {
+    "id": "incident-267",
+    "service": "file-storage",
+    "text": "Incident #267: a batch job processing large files caused a temporary CPU and disk I/O spike. Not a true anomaly, just an expected load pattern, but it was mistakenly flagged. Resolved by adding a maintenance-window exception."
+  },
+  {
+    "id": "runbook-gateway-memory",
+    "service": "api-gateway",
+    "text": "Runbook: when api-gateway memory usage climbs steadily without a matching increase in request rate, check for cache growth first, then check for connection leaks in the upstream client pool."
+  },
+  {
+    "id": "runbook-cpu-saturation",
+    "service": "general",
+    "text": "Runbook: for sustained CPU saturation above 85 percent, check for a recent deploy, a runaway background job, or a missing rate limit before scaling out."
+  }
+]
